@@ -7,13 +7,21 @@ const defaultState = {
 export default (state = defaultState, { type, payload }) => {
     switch (type) {
         case GET_POSTS:
-            return { ...state, posts: payload.data }
+            return { ...state, posts: payload}
         default:
             return state;
     }
 }
 
 export const getPosts = () => async (dispatch) => {
-    dispatch({ type: GET_POSTS, payload: [{ id: 1, title: "Test1" }] })
+    try {
+      await fetch('https://jsonplaceholder.typicode.com/posts')
+            .then((response) => response.json())
+            .then((data) => dispatch({ type: GET_POSTS, payload: data}));
+        } catch (e) {
+        console.log(e)
+        
+    }
+  
 
 }

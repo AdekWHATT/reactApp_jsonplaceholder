@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getPosts as getPostsAction, deletePost as deletePostAction } from './redux/modules/posts'
 import Post from './components/Post';
 import { useEffect, useState } from 'react';
+import CreatePost1 from './components/CreatePost/CreatePost';
 function App({ posts, getPosts, deletePost}) {
   useEffect(() => {
     getPosts();
@@ -11,6 +12,7 @@ function App({ posts, getPosts, deletePost}) {
  
   return (
     <div className="App">
+      <CreatePost1/>
       {posts.length && posts.map(item =>
         <Post
           key={item.id}

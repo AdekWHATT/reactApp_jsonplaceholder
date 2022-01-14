@@ -1,19 +1,21 @@
 import './App.css';
 import { connect } from 'react-redux';
-import { getPosts as getPostsAction } from './redux/modules/posts'
+import { getPosts as getPostsAction, deletePost as deletePostAction } from './redux/modules/posts'
 import Post from './components/Post';
-import { useEffect } from 'react';
-function App({ posts, getPosts }) {
-  // console.log(posts)
+import { useEffect, useState } from 'react';
+function App({ posts, getPosts, deletePost}) {
   useEffect(() => {
     getPosts();
-  }, [])
+  }, []);
 
+ 
   return (
     <div className="App">
       {posts.length && posts.map(item =>
         <Post
           key={item.id}
+          id={item.id}
+          deletePost={deletePost}
           title={item.title}
           body={item.body} />)}
     </div>
@@ -23,7 +25,8 @@ function App({ posts, getPosts }) {
 export default connect(
   ({ posts }) => ({ posts: posts.posts }),
   {
-    getPosts: getPostsAction
+    getPosts: getPostsAction,
+    deletePost: deletePostAction
   }
 
 )(App);

@@ -1,8 +1,9 @@
-import { Card } from 'antd';
-const Post = ({title, body}) => (
-    <Card>
-  <h1>{title}</h1>
-  <p>{body}</p>
+import { Button, Card } from 'antd';
+const Post = ({ id, title, body, deletePost }) => (
+  <Card>
+    <h1>{title}</h1>
+    <p>{body}</p>
+    <Button onClick={() => deletePost(id)} type='primary'>Удалить</Button>
   </Card>
 )
 

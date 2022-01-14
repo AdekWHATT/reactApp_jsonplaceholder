@@ -8,7 +8,12 @@ export default (state = defaultState, { type, payload }) => {
     switch (type) {
         case GET_POSTS:
             return { ...state, posts: payload.data }
-        default: 
-        return state;
+        default:
+            return state;
     }
+}
+
+export const getPosts = () => async (dispatch) => {
+    dispatch({ type: GET_POSTS, payload: [{ id: 1, title: "Test1" }] })
+
 }

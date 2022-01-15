@@ -1,7 +1,7 @@
 import './App.css';
 import { connect } from 'react-redux';
 import { getPosts as getPostsAction, deletePost as deletePostAction } from './redux/modules/posts'
-import Post from './components/Post';
+import Post from './components/Post/GetPosts';
 import { useEffect, useState } from 'react';
 import CreatePost1 from './components/CreatePost/CreatePost';
 function App({ posts, getPosts, deletePost}) {

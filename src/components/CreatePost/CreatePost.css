@@ -1,0 +1,33 @@
+.container {
+   
+   
+}
+.InputTitle {
+    margin: 10px;
+   
+}
+.InputBody {
+    margin: 10px;  
+}
+.Button {
+    margin: 10px;  
+
+}
+.input1 {
+    width: 200px;
+    height: 60px;
+    font-size: 17px;
+}
+.input2 {
+    width: 200px;
+    height: 60px;
+    font-size: 17px;
+}
+.button1 {
+    width:  180px;
+    height: 40px;
+    background-color: rgb(13, 29, 170);
+    color: aliceblue;
+    font-size: 20px;
+    text-align: center;
+} 

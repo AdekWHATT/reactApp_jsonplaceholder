@@ -14,13 +14,13 @@ export default (state = defaultState, { type, payload }) => {
         case DELETE_POST:
             return { ...state, posts: state.posts.filter(item => item.id !== payload.id) }
         case CREATE_POST:
-            return { ...state, posts: [...state.posts, payload]}
+            return { ...state, posts: [...state.posts, payload] }
         default:
             return state;
     }
 }
 //
-export const getPosts = () => async (dispatch) => {
+export const getPosts = () => async dispatch => {
     try {
         await fetch('https://jsonplaceholder.typicode.com/users/1/posts')
             .then((response) => response.json())
@@ -47,7 +47,7 @@ export const deletePost = (id) => async (dispatch) => {
 
 }
 
-export const createPost = ({title, body}) => async (dispatch) => {
+export const createPost = ({ title, body }) => async dispatch => {
     try {
         await fetch('https://jsonplaceholder.typicode.com/users/1/posts', {
             method: 'POST',
